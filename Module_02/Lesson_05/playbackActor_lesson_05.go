@@ -10,12 +10,22 @@ import (
 // Defining playback actor
 type PlaybackActor struct{}
 
+// Constructor for PlaybackActor
+func NewPlaybackActor() *PlaybackActor {
+	// Alternative: print creation message here
+	// fmt.Println("Creating a PlaybackActor")
+	return &PlaybackActor{}
+}
+
 func (state *PlaybackActor) Receive(ctx actor.Context) {
 	switch ctx.Message().(type) {
 	case *actor.Started:
 		// In C# we can send this within the constructor but as there is no such thing as an constructor
 		// for structs in Go we must log this message when we receive the *actor.Started message which is
 		// a system message sent whenever the actor is created
+
+		// There is an alternative: one could create a func NewPlaybackActor() *PlaybackActor message which creates the playback actor
+		// struct and therefore acts as an constructor. But there is nothing that prevents the user from creating the struct himself/herself.
 		fmt.Println("Creating a PlaybackActor")
 	}
 

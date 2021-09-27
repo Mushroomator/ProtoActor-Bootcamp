@@ -16,6 +16,11 @@ type PlayMovieMessage struct {
 	UserId     int
 }
 
+// Constructor for PlaybackActor
+func NewPlaybackActor() *PlaybackActor {
+	return &PlaybackActor{}
+}
+
 func (state *PlaybackActor) Receive(ctx actor.Context) {
 	switch msg := ctx.Message().(type) {
 	case *PlayMovieMessage:
@@ -33,7 +38,7 @@ func main() {
 
 	// Creating props for the playbackActor
 	props := actor.PropsFromProducer(func() actor.Actor {
-		return &PlaybackActor{}
+		return NewPlaybackActor()
 	})
 
 	// Creating the playbackActor and receiving its PID which we can use to reference the actor
