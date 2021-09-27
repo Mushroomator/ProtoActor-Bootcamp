@@ -1,0 +1,20 @@
+// Protobuf file for lesson 3
+syntax = "proto3";
+
+// define package to prevent naming conflicts
+package greet;
+
+// Define go package
+option go_package = "github.com/Mushroomator/ProtoActorGo-Bootcamp/Module_02/main";
+
+// Define messages
+message HelloRequest {
+  string name = 1;
+}
+ 
+message HelloReply {
+  string message = 1;
+}
+
+// Use the following command to generate the Go code for (de)serializing the messages defined in this .proto file
+// "protoc -I=$SRC_DIR --go_out=$OUT_DIR greetMsgs.proto"

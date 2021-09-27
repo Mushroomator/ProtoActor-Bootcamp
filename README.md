@@ -18,9 +18,11 @@ All code for the C# version of the Bootcamp can be found [within this respositor
     - [Module 7](#module-7)
     - [Module 8](#module-8)
     - [Module 9](#module-9)
+  - [HowTo: Run examples](#howto-run-examples)
   - [License](#license)
 
 ## Bootcamp
+List of all modules within Proto.Actor Bootcamp and corresponding information/ links to each of them.
 
 ### Module 1
 |                  |                                                                             |
@@ -85,6 +87,10 @@ All code for the C# version of the Bootcamp can be found [within this respositor
 | **Instructions** | [Proto.Actor Bootcamp: Module 1](https://proto.actor/docs/bootcamp/unit-9/) |
 | **Go code**      | [Module 9](./Module_09)                                                     |
 
+## HowTo: Run examples
+You can download and install each module by running `go install github.com/Mushroomator/ProtoActorGo-Bootcamp/Module_{numberOfModule}` where `{numberOfModule}` is the module you want to get.
+Most of the time it is no use running the module itself as different lessons within the module have different code. To enable you to run the code for each lesson separatly the code for one lesson is kept in a single .go file if possible.
+You may then use `go run {path/to/file}` to run the code within the .go file. 
 
 ## License
 Copyright (c) 2021 Thomas Pilz
